@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.0 -->
+<!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
   <object class="GtkAssistant" id="aqbanking_init_assistant">
     <property name="can_focus">False</property>
     <property name="border_width">12</property>
     <property name="title" translatable="yes">AqBanking Initial Assistant</property>
-    <property name="default_width">400</property>
+    <property name="default_width">1100</property>
     <signal name="cancel" handler="aai_on_cancel" swapped="no"/>
     <signal name="close" handler="aai_on_finish" swapped="no"/>
     <signal name="prepare" handler="aai_on_prepare" swapped="no"/>
@@ -34,11 +34,13 @@ NOTE: NO WARRANTIES FOR ANYTHING. Some banks run a poorly implemented Online Ban
 Press "Cancel" if you do not wish to setup any Online Banking connection now.
 </property>
         <property name="wrap">True</property>
+        <property name="yalign">0.25</property>
       </object>
       <packing>
         <property name="page_type">intro</property>
         <property name="title" translatable="yes">Initial Online Banking Setup</property>
         <property name="complete">True</property>
+        <property name="has_padding">False</property>
       </packing>
     </child>
     <child>
@@ -47,13 +49,14 @@ Press "Cancel" if you do not wish to setup any Online Banking connection now.
         <property name="can_focus">False</property>
         <property name="border_width">12</property>
         <property name="orientation">vertical</property>
-        <property name="spacing">12</property>
+        <property name="baseline_position">top</property>
         <child>
           <object class="GtkLabel" id="label8877441">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">The Setup of your Online Banking connection is handled by the external program "AqBanking Setup Wizard". Please press the button below to start this program.</property>
             <property name="wrap">True</property>
+            <property name="yalign">0.25</property>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -65,6 +68,8 @@ Press "Cancel" if you do not wish to setup any Online Banking connection now.
           <object class="GtkAlignment" id="alignment7">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="border_width">100</property>
+            <property name="yalign">0.25</property>
             <property name="xscale">0</property>
             <child>
               <object class="GtkButton" id="ab_wizard_button">
@@ -87,6 +92,7 @@ Press "Cancel" if you do not wish to setup any Online Banking connection now.
       <packing>
         <property name="page_type">intro</property>
         <property name="title" translatable="yes">Start Online Banking Wizard</property>
+        <property name="has_padding">False</property>
       </packing>
     </child>
     <child>
@@ -146,6 +152,7 @@ Press "Cancel" if you do not wish to setup any Online Banking connection now.
       </object>
       <packing>
         <property name="title" translatable="yes">Match Online accounts with GnuCash accounts</property>
+        <property name="has_padding">False</property>
       </packing>
     </child>
     <child>
@@ -158,17 +165,14 @@ If you want to add another bank, user, or account, you can start this assistant 
 
 Press "Apply" now.</property>
         <property name="wrap">True</property>
+        <property name="yalign">0.25</property>
       </object>
       <packing>
         <property name="page_type">confirm</property>
         <property name="title" translatable="yes">Online Banking Setup Finished</property>
         <property name="complete">True</property>
+        <property name="has_padding">False</property>
       </packing>
-    </child>
-    <child internal-child="action_area">
-      <object class="GtkBox">
-        <property name="can_focus">False</property>
-      </object>
     </child>
   </object>
 </interface>
