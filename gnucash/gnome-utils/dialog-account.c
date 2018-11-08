@@ -73,7 +73,9 @@ typedef enum
 
 typedef struct _AccountWindow
 {
+    GtkWindow *parent;
     QofBook *book;
+    Account *base_account;
     gboolean modal;
     GtkWidget *dialog;
 
@@ -116,6 +118,7 @@ typedef struct _AccountWindow
     GtkWidget * tax_related_button;
     GtkWidget * placeholder_button;
     GtkWidget * hidden_button;
+    GtkWidget * continue_button;
 
     gint component_id;
 } AccountWindow;
@@ -537,6 +540,8 @@ make_children_compatible (AccountWindow *aw)
 static void
 gnc_finish_ok (AccountWindow *aw)
 {
+    gboolean flag;
+
     ENTER("aw %p", aw);
     gnc_suspend_gui_refresh ();
 
@@ -585,6 +590,14 @@ gnc_finish_ok (AccountWindow *aw)
 
     /* so it doesn't get freed on close */
     aw->account = *guid_null ();
+
+    flag =
+        gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (aw->continue_button));
+    
+    if (flag)
+    {
+        gnc_ui_new_account_window (aw->parent, aw->book, aw->base_account);
+    }
 
     gnc_close_gui_component (aw->component_id);
     LEAVE("2");
@@ -1379,6 +1392,7 @@ gnc_account_window_create(GtkWindow *parent, AccountWindow *aw)
     aw->tax_related_button = GTK_WIDGET(gtk_builder_get_object (builder, "tax_related_button"));
     aw->placeholder_button = GTK_WIDGET(gtk_builder_get_object (builder, "placeholder_button"));
     aw->hidden_button = GTK_WIDGET(gtk_builder_get_object (builder, "hidden_button"));
+    aw->continue_button = GTK_WIDGET(gtk_builder_get_object (builder, "continue_button"));
 
     box = GTK_WIDGET(gtk_builder_get_object (builder, "opening_balance_box"));
     amount = gnc_amount_edit_new ();
@@ -1589,6 +1603,7 @@ gnc_ui_new_account_window_internal (GtkWindow *parent,
 
     aw = g_new0 (AccountWindow, 1);
 
+    aw->parent = parent;
     aw->book = book;
     aw->modal = modal;
     aw->dialog_type = NEW_ACCOUNT;
@@ -1656,6 +1671,8 @@ gnc_ui_new_account_window_internal (GtkWindow *parent,
     gtk_tree_view_collapse_all (aw->parent_tree);
     gnc_tree_view_account_set_selected_account (
         GNC_TREE_VIEW_ACCOUNT (aw->parent_tree), base_account);
+    aw->base_account = gnc_tree_view_account_get_selected_account (
+        GNC_TREE_VIEW_ACCOUNT (aw->parent_tree));
 
     gtk_widget_show (aw->dialog);
 
@@ -1863,6 +1880,7 @@ gnc_ui_edit_account_window(GtkWindow *parent, Account *account)
 
     gtk_widget_show_all (aw->dialog);
     gtk_widget_hide (aw->opening_balance_page);
+    gtk_widget_hide (aw->continue_button);
 
     parent_acct = gnc_account_get_parent (account);
     if (parent_acct == NULL)
