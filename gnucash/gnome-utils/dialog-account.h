@@ -43,7 +43,7 @@
 /** @name Non-Modal
  @{ */
 
-/** Disply a window for editing the attributes of an existing account.
+/** Display a window for editing the attributes of an existing account.
  *
  *  @param parent The widget on which to parent the dialog.
  *
@@ -53,7 +53,7 @@
 void gnc_ui_edit_account_window (GtkWindow *parent, Account *account);
 
 
-/** Disply a window for creating a new account.  This function will
+/** Display a window for creating a new account.  This function will
  *  also initially set the parent account of the new account to what
  *  the caller specified.  The user is free, however, to choose any
  *  parent account they wish.
@@ -71,7 +71,7 @@ void gnc_ui_new_account_window (GtkWindow *parent,
                                 QofBook *book, Account *parent_acct);
 
 
-/** Disply a window for creating a new account.  This function will
+/** Display a window for creating a new account.  This function will
  *  restrict the available account type values to the list specified
  *  by the caller.
  *
