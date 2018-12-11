@@ -34,6 +34,8 @@ static gboolean extras_enabled    = FALSE;
 static gboolean use_compression   = TRUE; // This is also the default in the prefs backend
 static gint file_retention_policy = 1;    // 1 = "days", the default in the prefs backend
 static gint file_retention_days   = 30;   // This is also the default in the prefs backend
+static gboolean default_save = TRUE;
+static gchar* file_directory = NULL;
 
 PrefsBackend *prefsbackend = NULL;
 
@@ -111,6 +113,32 @@ void
 gnc_prefs_set_file_retention_days(gint days)
 {
     file_retention_days = days;
+}
+
+/* Getter/setter for deafult_save boolean value */
+gboolean
+gnc_prefs_get_default_save(void)
+{
+    return default_save;
+}
+
+void
+gnc_prefs_set_default_save(gboolean def_save)
+{
+    default_save = def_save;
+}
+
+/* Getter/setter for default save file directory path */
+gchar*
+gnc_prefs_get_file_directory(void)
+{
+    return file_directory;
+}
+
+void
+gnc_prefs_set_file_directory(gchar* fd)
+{
+    file_directory = fd;
 }
 
 guint

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.2 -->
+<!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
   <object class="GtkAdjustment" id="auto_decimal_places_adj">
@@ -105,6 +105,9 @@
     <property name="default_height">400</property>
     <property name="type_hint">normal</property>
     <signal name="response" handler="gnc_preferences_response_cb" swapped="no"/>
+    <child>
+      <placeholder/>
+    </child>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox2">
         <property name="visible">True</property>
@@ -1233,7 +1236,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
-                    <property name="top_attach">23</property>
+                    <property name="top_attach">24</property>
                   </packing>
                 </child>
                 <child>
@@ -1248,7 +1251,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">21</property>
+                    <property name="top_attach">22</property>
                   </packing>
                 </child>
                 <child>
@@ -1267,7 +1270,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">15</property>
+                    <property name="top_attach">16</property>
                   </packing>
                 </child>
                 <child>
@@ -1416,7 +1419,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">28</property>
+                    <property name="top_attach">29</property>
                   </packing>
                 </child>
                 <child>
@@ -1431,7 +1434,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">29</property>
+                    <property name="top_attach">30</property>
                   </packing>
                 </child>
                 <child>
@@ -1449,7 +1452,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
-                    <property name="top_attach">29</property>
+                    <property name="top_attach">30</property>
                   </packing>
                 </child>
                 <child>
@@ -1483,7 +1486,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">17</property>
+                    <property name="top_attach">18</property>
                   </packing>
                 </child>
                 <child>
@@ -1525,7 +1528,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
-                    <property name="top_attach">17</property>
+                    <property name="top_attach">18</property>
                   </packing>
                 </child>
                 <child>
@@ -1544,7 +1547,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">16</property>
+                    <property name="top_attach">17</property>
                   </packing>
                 </child>
                 <child>
@@ -1554,7 +1557,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">20</property>
+                    <property name="top_attach">21</property>
                   </packing>
                 </child>
                 <child>
@@ -1573,7 +1576,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">22</property>
+                    <property name="top_attach">23</property>
                   </packing>
                 </child>
                 <child>
@@ -1592,7 +1595,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">23</property>
+                    <property name="top_attach">24</property>
                   </packing>
                 </child>
                 <child>
@@ -1611,7 +1614,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">24</property>
+                    <property name="top_attach">25</property>
                   </packing>
                 </child>
                 <child>
@@ -1629,7 +1632,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">18</property>
+                    <property name="top_attach">19</property>
                   </packing>
                 </child>
                 <child>
@@ -1644,7 +1647,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">19</property>
+                    <property name="top_attach">20</property>
                   </packing>
                 </child>
                 <child>
@@ -1684,7 +1687,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
-                    <property name="top_attach">19</property>
+                    <property name="top_attach">20</property>
                   </packing>
                 </child>
                 <child>
@@ -1694,7 +1697,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">25</property>
+                    <property name="top_attach">26</property>
                   </packing>
                 </child>
                 <child>
@@ -1708,7 +1711,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
-                    <property name="top_attach">26</property>
+                    <property name="top_attach">27</property>
                   </packing>
                 </child>
                 <child>
@@ -1744,7 +1747,7 @@ many months before the current month:</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">26</property>
+                    <property name="top_attach">27</property>
                   </packing>
                 </child>
                 <child>
@@ -1781,6 +1784,36 @@ many months before the current month:</property>
                     <property name="left_attach">0</property>
                     <property name="top_attach">6</property>
                     <property name="width">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="pref/general/default-save-directory">
+                    <property name="label" translatable="yes">Set default save directory</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_markup" translatable="yes">If active, GnuCash will set the default save directory path to the selected file directory.</property>
+                    <property name="halign">start</property>
+                    <property name="margin_left">12</property>
+                    <property name="use_underline">True</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">15</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFileChooserButton" id="pref/general/default-file-directory">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="action">select-folder</property>
+                    <property name="show_hidden">True</property>
+                    <property name="title" translatable="yes">Select File Directory</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">15</property>
                   </packing>
                 </child>
                 <child>
@@ -3338,8 +3371,5 @@ many months before the current month:</property>
       <action-widget response="-11">helpbutton2</action-widget>
       <action-widget response="-7">closebutton2</action-widget>
     </action-widgets>
-    <child>
-      <placeholder/>
-    </child>
   </object>
 </interface>

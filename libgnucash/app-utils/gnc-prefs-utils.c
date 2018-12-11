@@ -36,6 +36,8 @@ static QofLogModule log_module = G_LOG_DOMAIN;
 #define GNC_PREF_RETAIN_TYPE_DAYS    "retain-type-days"
 #define GNC_PREF_RETAIN_TYPE_FOREVER "retain-type-forever"
 #define GNC_PREF_RETAIN_DAYS         "retain-days"
+#define GNC_PREF_SAVE_DIRECTORY      "default-save-directory"
+#define GNC_PREF_FILE_DIRECTORY      "default-file-directory"
 
 /***************************************************************
  * Initialization                                              *
@@ -78,6 +80,20 @@ file_compression_changed_cb(gpointer gsettings, gchar *key, gpointer user_data)
     }
 }
 
+static void
+file_save_directory_changed_cb(gpointer gsettings, gchar *key, gpointer user_data)
+{
+    if (gnc_prefs_is_set_up())
+    {
+        /* Obtain boolean and string value from preferences */
+        gboolean default_save = !(gnc_prefs_get_bool(GNC_PREFS_GROUP_GENERAL, GNC_PREF_SAVE_DIRECTORY));
+        gchar* file_directory = gnc_prefs_get_string(GNC_PREFS_GROUP_GENERAL, GNC_PREF_FILE_DIRECTORY);
+
+        /* Set these preferences for later use */
+        gnc_prefs_set_default_save(default_save);
+        gnc_prefs_set_file_directory(file_directory);
+    }
+}
 
 void gnc_prefs_init (void)
 {
@@ -89,6 +105,7 @@ void gnc_prefs_init (void)
     file_retain_changed_cb (NULL, NULL, NULL);
     file_retain_type_changed_cb (NULL, NULL, NULL);
     file_compression_changed_cb (NULL, NULL, NULL);
+    file_save_directory_changed_cb (NULL, NULL, NULL);
 
     /* Check for invalid retain_type (days)/retain_days (0) combo.
      * This can happen either because a user changed the preferences
@@ -121,6 +138,10 @@ void gnc_prefs_init (void)
     gnc_prefs_register_cb (GNC_PREFS_GROUP_GENERAL, GNC_PREF_RETAIN_TYPE_FOREVER,
                            file_retain_type_changed_cb, NULL);
     gnc_prefs_register_cb (GNC_PREFS_GROUP_GENERAL, GNC_PREF_FILE_COMPRESSION,
+                           file_compression_changed_cb, NULL);
+    gnc_prefs_register_cb (GNC_PREFS_GROUP_GENERAL, GNC_PREF_SAVE_DIRECTORY,
+                           file_compression_changed_cb, NULL);
+    gnc_prefs_register_cb (GNC_PREFS_GROUP_GENERAL, GNC_PREF_FILE_DIRECTORY,
                            file_compression_changed_cb, NULL);
 
 }

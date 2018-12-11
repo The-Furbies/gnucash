@@ -25,6 +25,16 @@
       <summary>Transaction Associations head path</summary>
       <description>This is the path head for the Transaction file Associations</description>
     </key>
+    <key name="default-save-directory" type="b">
+      <default>false</default>
+      <summary>Set default directory</summary>
+      <description>If active, GnuCash will set the default save directory path to the selected file directory.</description>
+    </key>
+    <key name="default-file-directory" type="s">
+      <default>''</default>
+      <summary>Set default file directory</summary>
+      <description>This is the path for the default save file directory.</description>
+    </key>
     <key name="file-compression" type="b">
       <default>true</default>
       <summary>Compress the data file</summary>

@@ -278,7 +278,7 @@ QofSessionImpl::begin (std::string new_book_id, bool ignore_lock,
     /* destroy the old backend */
     destroy_backend ();
     /* Store the session URL  */
-    m_book_id = new_book_id;
+    // m_book_id = new_book_id;
     m_creating = create;
     if (filename)
         load_backend ("file");

@@ -276,6 +276,16 @@
       <gconfkey>account_separator</gconfkey>
     </pref>
     <pref>
+      <gschemaname>default-save-directory</gschemaname>
+      <gschematype>b</gschematype>
+      <gconfkey>default_save_directory</gconfkey>
+    </pref>
+    <pref>
+      <gschemaname>default-file-directory</gschemaname>
+      <gschematype>b</gschematype>
+      <gconfkey>default_save_directory</gconfkey>
+    </pref>
+    <pref>
       <gschemaname>file-compression</gschemaname>
       <gschematype>b</gschematype>
       <gconfkey>file_compression</gconfkey>

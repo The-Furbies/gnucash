@@ -115,6 +115,12 @@ void gnc_prefs_set_file_retention_policy(gint policy);
 gint gnc_prefs_get_file_retention_days(void);
 void gnc_prefs_set_file_retention_days(gint days);
 
+gboolean gnc_prefs_get_default_save(void);
+void gnc_prefs_set_default_save(gboolean def_save);
+
+gchar* gnc_prefs_get_file_directory(void);
+void gnc_prefs_set_file_directory(gchar* fd);
+
 guint gnc_prefs_get_long_version( void );
 
 /** @} */
